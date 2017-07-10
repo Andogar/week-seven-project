@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const moment = require('moment');
-
 
 const usersSchema = new mongoose.Schema({
     name: { type: String, required: true },
