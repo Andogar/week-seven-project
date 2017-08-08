@@ -10,16 +10,6 @@ mongoose.connect('mongodb://localhost:27017/activityApplication');
 
 application.use(bodyParser.json());
 
-async function getUsers() {
-    var allUsers = await users.find();
-    return allUsers
-}
-
-application.get('/api/users', async (request, response) => {
-    var userList = await getUsers();
-    response.json(userList);
-});
-
 application.post('/api/users', async (request, response) => {
     var name = request.body.name;
     var password = request.body.password;
@@ -32,7 +22,7 @@ application.post('/api/users', async (request, response) => {
         email: email
     });
 
-    response.json(userList);
+    response.json("Successfully added user");
 });
 
 // LIST ACTIVITIES
